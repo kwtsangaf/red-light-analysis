@@ -44,6 +44,13 @@ updatemenu[0]['buttons'] = buttons
 updatemenu[0]['direction'] = 'down'
 updatemenu[0]['showactive'] = True
 
-fig.update_layout(updatemenus=updatemenu)
+fig.update_layout(updatemenus=updatemenu,
+                  title='Top 10 Redlight Charges in different locations across different years',
+                  yaxis_title="number of tickets",
+                  xaxis_title="location")
 
 fig.show()
+
+fig.write_html('redlight.html',
+               full_html=True,
+               include_plotlyjs='cdn')
